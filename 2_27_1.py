@@ -16,36 +16,28 @@
 
 #单链链表
 
-class Node:
+class Node():
 	def __init__(self,d=None):
 		self.data = d
 		self.nextNode = None
-
-	def set_and_return_Next(self,d=None):
+	def set_and_return_nextNode(self,d=None):
 		self.nextNode = Node(d)
 		return self.nextNode
+	def get_data(self):
+		return self.data
 
-	def getNext(self):
-		return self.nextNode
-
-	def getData(self):
-		return self.data 
-
-
-class LinkedList:
+class LinkedList():
 	def buildList(self,array):
 		self.head = Node(array[0])
-		self.temp = self.head
+		self.tem = self.head
 		for i in array[1:]:
-			self.temp = self.temp.set_and_return_Next(i)
-			self.tail = self.temp
+			self.tem = self.tem.set_and_return_nextNode(i)
 		return self.head
 	def printList(self):
 		tempNode = self.head
-		while tempNode != self.tail :
-			print tempNode.getData()
-			tempNode = tempNode.getNext()
-		print self.tail.getData()
+		while tempNode :
+			print tempNode.get_data()
+			tempNode = tempNode.nextNode
 
 myArray = [3,5,4,6,2,6,7,8,9,10,21]
 myList = LinkedList()
