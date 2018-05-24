@@ -60,9 +60,3 @@ class Time(object):
 		return False
 
 
-# 定义一个Date类
-class Date(object):
-	def __init__(self, year, month, day):
-		if not isinstance(year, int) or not isinstance(month, int) or\
-		not isinstance(day, int):
-			raise TypeError
